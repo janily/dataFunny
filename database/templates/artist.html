@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Artists</title>
+</head>
+<body>
+    <h2>Artists</h2>
+    <ul>
+        {% for artist in artists %}
+            <li>
+                <a href="{% url "detail"  id=artist.id %}">
+                    {{ artist.name }}
+                </a>
+                <a href="{% url "delete" id=artist.id%}" style="margin-left: 50px;">删除</a>
+                <a href="{% url "update" id=artist.id%}" style="margin-left: 50px;">更新</a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
